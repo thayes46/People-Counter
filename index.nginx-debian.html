@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function updateValue(){
+				var rawFile = new XMLHttpRequest();
+				rawFile.open("GET", "Count.txt", false);
+				rawFile.send(null);
+				document.getElementById("value").innerHTML = rawFile.responseText;
+				setTimeout('updateValue()',1000);
+			}
+		</script>
+	</head>
+	<body onLoad="updateValue()">
+		<p id="value">TEST</p>	
+	</body>
+</html>
